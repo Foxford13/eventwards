@@ -149,9 +149,6 @@ console.log(`here`, source);
 
 			$(`#modalID${speakerId} .modal-content`).html(data);
 			readMore($(`.bio-speaker`));
-console.log('we work');
-
-
 			$(`.card-list`).on(`scroll`, disapearingArrows);
 			$(`.close-modal`).on(`click`, closeModal);
 		}
@@ -161,7 +158,7 @@ console.log('we work');
 		$openPopupSpeaker.on(`click`, (event)=> {
 
 			const speakerId = event.target.closest(`.openpop`).id.replace( /^\D+/g, ``);
-			console.log('i fucking work');
+
 			$(`#modalID${speakerId}`).css(`display`, `block`);
 			ajaxTemplate(`/speaker/${speakerId}/false`, `GET`, {}, modifyTextOnPop.bind(null, speakerId), `html`);
 			$(`.read-more-trigger`).text(`works`);
@@ -276,7 +273,7 @@ console.log('we work');
 
 				function submitContactDetails (event) {
 
-		
+
 
 				event.preventDefault();
 

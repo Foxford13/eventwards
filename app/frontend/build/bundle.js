@@ -11695,7 +11695,7 @@ $(document).ready(function () {
 	$openPopupSpeaker.on('click', function (event) {
 
 		var speakerId = event.target.closest('.openpop').id.replace(/^\D+/g, '');
-		console.log('i fucking work');
+
 		$('#modalID' + speakerId).css('display', 'block');
 		ajaxTemplate('/speaker/' + speakerId + '/false', 'GET', {}, modifyTextOnPop.bind(null, speakerId), 'html');
 		$('.read-more-trigger').text('works');
@@ -11837,7 +11837,7 @@ $(document).ready(function () {
 	}
 
 	$('.search-bar-main').on('submit', function (event) {
-		console.log('i work!!!!!!');
+
 		event.preventDefault();
 
 		var searchData = encodeURIComponent($(event.target).find('input').val());

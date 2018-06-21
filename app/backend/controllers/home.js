@@ -17,7 +17,7 @@ const moment = require(`moment`);
 function formatedDateCard (eventsData, originalEventsData, dateFormat, secondDateFormat) {
 
 	for (let index = 0; index < originalEventsData.length; index++) {
-		// datesArray.push(moment(eventsData[index].eventDate.finish).format(`D.MM YYYY`));
+
 		if (!secondDateFormat) {
 			secondDateFormat = dateFormat;
 		}
@@ -36,9 +36,6 @@ function formatedDateCard (eventsData, originalEventsData, dateFormat, secondDat
 }
 
 function formatedDateCardSessions (sessionsData, originalSessionsData, dateFormat) {
-
-
-
 
 	for (let index = 0; index < originalSessionsData.length; index++) {
 

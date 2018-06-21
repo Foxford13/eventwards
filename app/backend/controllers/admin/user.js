@@ -35,15 +35,14 @@ async function addReferencedIdToCollections (data, params) {
 }
 
 async function removeReferencedIdFromCollections (data) {
-console.log(data);
 
 	await Tag.updateMany(
 		{ _id: { $in: data._tags } }, { $pull: { '_organisers': data._id } }).exec();
-		console.log('1');
+
 
 	await Tag.updateMany(
 		{ _id: { $in: data._tags } }, { $pull: { '_speakers': data.id } }).exec();
-	console.log('2');
+
 	if (data.events) {
 		// await Event.update(
 		// 	{ _id: { $in: data.events._organising } }, { $pull: { '_organiser': data._id } }).exec();
