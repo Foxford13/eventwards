@@ -1,0 +1,20 @@
+<h1>Admin / Users</h1>
+<a href="/admin-users/new">New user</a>
+
+<div class="users-container">
+	<div class="user-blue-desc">
+		{{> card-slider content-title="Users"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="user-list card-list list-admin">
+
+				{{#each usersIndex}}
+				{{> user-card-admin fullName=fullName profession=profession location=location nationality=nationality imageUrl=imageUrl _id=id }}
+
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+	</div>
+</div>

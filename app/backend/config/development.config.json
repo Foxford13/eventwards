@@ -1,0 +1,5 @@
+{
+	"database": {
+		"connectionString": "mongodb://jakubrecombix:123456789@ds163595.mlab.com:63595/eventwards-development"
+	}
+}

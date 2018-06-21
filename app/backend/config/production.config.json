@@ -1,0 +1,8 @@
+{
+	"server": {
+		"port": 7000
+	},
+	"database": {
+		"connectionString": "mongodb://user-bCX5V7ymRggDUOfyX0cJ:BJjrMJ51gy5djw17Cr1rp3WbjMlMxe5NxwkMi8kg@ds253717-a0.mlab.com:53717,ds253717-a1.mlab.com:53717/eventwards-production?replicaSet=rs-ds253717"
+	}
+}

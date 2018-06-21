@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Customize / Edit Customize</h1>
+
+
+<input id="edit-customize-id" type="hidden" name="" value="{{customizeData._id}}">
+
+<form class="edit-customize form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="mainPageImageUrl">Main Page Image</label>
+		<input type="text" name="mainPageImageUrl"  placeholder="mainPageImageUrl" value="{{customizeData.mainPageImageUrl}}">
+	</div>
+	<div class="info-container">
+		<label for="aboutCompany">About Company</label>
+		<textarea type="text" name="aboutCompany"  placeholder="aboutCompany" value="{{customizeData.aboutCompany}}">{{customizeData.aboutCompany}}</textarea>
+	</div>
+
+
+
+	<button class="admin-post-btn" type="submit" >Edit Customize</button>
+
+</form>

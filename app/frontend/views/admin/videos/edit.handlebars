@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Videos / Edit Video</h1>
+
+
+<input id="edit-video-id" type="hidden" name="" value="{{videoData._id}}">
+<form class="edit-video form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="title">Title</label>
+		<input type="text" name="title"  placeholder="title" value="{{videoData.title}}">
+	</div>
+
+	<div class="info-container">
+		<label for="url">Url</label>
+		<input type="text" name="url"  placeholder="url" value="{{videoData.url}}">
+	</div>
+
+
+
+	<div class="info-container">
+		<label for="text">Image Url</label>
+		<input type="text" name="image"  placeholder="image" value="{{videoData.image}}">
+	</div>
+
+	<div class="info-container">
+		<label>Pick event related to this video</label>
+
+		<select multiple class="events" name="events">
+			{{#each eventData }}
+			<option value="{{_id}}" {{selected _id ../videoData._events}}> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Pick a hub related to this vid</label>
+		<select multiple class="hubs" name="hubs">
+			{{#each hubData }}
+			<option value="{{_id}}" {{selected _id ../videoData._hubs}}> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Pick a tag related to this vid</label>
+		<select multiple class="tags" name="tags">
+			{{#each tagData }}
+			<option value="{{_id}}" {{selected _id ../videoData._tags}}> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label>Speakers</label>
+		{{eventData._speakers.length}}
+		<select multiple class="speakers" name="speakers">
+			{{#each userData }}
+			<option value="{{_id}}"  {{selected _id ../videoData._speakers}}> {{fullName}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label for="about">About</label>
+		<textarea type="text" name="about"  placeholder="about" value="{{videoData.about}}">{{videoData.about}}</textarea>
+	</div>
+
+	<button class="admin-post-btn" type="submit" >Update the vid</button>
+
+</form>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Hubs / New Hub</h1>
+
+
+<input id="new-hub-id" type="hidden" name="">
+
+<form class="new-hub form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="name">Title</label>
+		<input class="name" type="text" name="name"  placeholder="name" >
+	</div>
+
+	<div class="info-container">
+		<label for="slug">slug</label>
+		<input type="text" name="slug"  placeholder="slug" >
+	</div>
+	<div class="info-container">
+		<label for="imageUrl">imageUrl</label>
+		<input type="text" name="imageUrl"  placeholder="imageUrl" >
+	</div>
+
+	<div class="info-container">
+		<label>Speakers</label>
+		<select multiple class="multiple-select-admin speakers" name="speakers">
+
+			{{#each userData }}
+			<option value="{{_id}}"> {{fullName}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Organisers</label>
+		<select class="organiser" name="organiser">
+
+			{{#each userData }}
+			<option value="{{_id}}"> {{fullName}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label>article</label>
+		<select multiple class="multiple-select-admin articles" name="articles">
+
+			{{#each articleData }}
+			<option value="{{_id}}"> {{title}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Tags</label>
+		<select multiple class="multiple-select-admin tags" name="tags">
+
+			{{#each tagData }}
+			<option value="{{_id}}"> {{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Videos</label>
+		<select multiple class="multiple-select-admin videos" name="videos">
+
+			{{#each videoData }}
+			<option value="{{_id}}"> {{title}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Events</label>
+		<select multiple class="multiple-select-admin events" name="events">
+
+			{{#each eventData }}
+			<option value="{{_id}}" {{selected _id ../hubData._events}}> {{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+	<button class="admin-post-btn" type="submit" >New hub</button>
+
+</form>

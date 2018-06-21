@@ -1,0 +1,845 @@
+
+@mixin event-list-common() {
+	margin: 0 auto;
+	overflow: hidden;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 92vw;
+	-webkit-overflow-scrolling: touch;
+
+}
+
+
+@mixin card-common() {
+	background-color: white;
+	box-shadow: 0.1rem 0.1rem 0.1rem #c9c8cd;
+	display: inline-block;
+	vertical-align: middle;
+
+
+}
+
+
+.event-list {
+	height: 10.63rem;
+	padding-right: 0.7rem;
+	@include event-list-common();
+
+	.card.event-card {
+		@include card-common();
+		width: 10rem;
+		height: 99%;
+		margin-right: 0.5rem;
+		text-align: left;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+
+		}
+
+		.img {
+			height: 5.625rem;
+			width: 100%;
+			background-size: cover;
+		}
+		.text-wrapper {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			white-space: nowrap;
+			overflow: hidden;
+			margin-right: 0.5rem;
+			margin-left: 0.6rem;
+
+			h5 {
+				color: $secondary-colour;
+				font-size: 0.7rem;
+				font-size: 0.7rem;
+				margin-top: 0.3rem;
+				line-height: 0.9rem;
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+				height: 1.8rem;
+				white-space: normal;
+				overflow: hidden;
+
+			}
+			.location {
+				font-size: 0.7em;
+				margin-top: 0.45rem;
+				margin-bottom: 0.35rem;
+				flex: 1;
+				flex-shrink: 0;
+				font-weight: 300;
+			}
+			.date {
+				color: $primary-colour;
+				font-size: 0.6em;
+				flex: 1;
+				flex-shrink: 0;
+				padding-bottom: 0.5rem;
+				font-weight: 300;
+				min-height: 2.813rem;
+			}
+		}
+	}
+	.card.event-card:last-child {
+		margin-right: 0px;
+	}
+}
+
+.hub-button {
+	display: inline-block;
+	background-color: #a8a8a7;
+	color: white;
+	padding: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 25px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	font-size: 12px;
+}
+
+
+
+
+.video-list, .article-list {
+	height: 10rem;
+	@include event-list-common();
+
+	.card.video-card, .card.article-card {
+
+		cursor: pointer;
+		@include card-common();
+		width: 10rem;
+		height: 8.75rem;
+		margin-right: 0.5rem;
+
+		.img {
+			background-image: url('http://www.fillmurray.com/200/200');
+			height: 5.625rem;
+			width: 100%;
+			background-size: cover;
+			display: flex;
+			.video-length {
+				font-size: 0.6em;
+				color: white;
+				background-color: rgba(0, 0, 0, 0.9);
+				border-radius: 0.15rem;
+				align-self: flex-end;
+				margin-left: auto;
+				padding: 0.1rem 0.5rem;
+				margin-bottom: 0.2rem;
+				margin-right: 0.75rem;
+
+			}
+
+		}
+		.text-wrapper {
+			padding-right: 0.6rem;
+			padding-left: 0.6rem;
+
+			h5 {
+				color: $secondary-colour;
+				font-size: 14px;
+				margin-top: 0.3rem;
+				margin-bottom: 0.3rem;
+				width: 9.375rem;
+
+				white-space: normal;
+				overflow: auto;
+			}
+		}
+	}
+}
+.session-list {
+
+	@include event-list-common();
+	height: 9rem;
+	width: 21rem;
+
+
+	.session-card{
+
+		@include card-common();
+		width: 10rem;
+		height:  8.438rem;
+		margin-right: 5px;
+		padding: 5px;
+		background-color: #eaeaea;
+
+		.room {
+			height: 18px;
+			color: #909090;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			border-radius: 3px;
+			font-size: 14px;
+		}
+
+		.details {
+			background-color: white;
+			width: 9.375rem;
+			height: 6.563rem;
+			padding: 0.3125rem;
+
+			.topic {
+
+				width: 100%;
+				min-height: 26px;
+				white-space: normal;
+				overflow: auto;
+				font-size: 12px;
+				letter-spacing: 0.5px;
+				font-weight: 700;
+				color: #4D5A70;
+			}
+			.speaker {
+				font-size: 12px;
+				min-height: 12px;
+				margin-bottom: 4px;
+				margin-top: 4px;
+
+			}
+
+			.speaker-bot-wrapper {
+				height: 3.438rem;
+				width: 100%;
+				display: flex;
+				flex-direction: row;;
+
+				.image {
+					height: 3.125rem;
+					min-width: 3.125rem;
+					background-image: url("https://images-na.ssl-images-amazon.com/images/I/714AdYEq6mL.jpg");
+					border-radius: 3px;
+					background-size: cover;
+				}
+				.bot-right {
+					width: 100%;
+					padding: 5px;
+
+					.organisation {
+						width: 100%;
+						min-height: 2.063rem;
+						font-size: 0.75rem;
+						font-weight: 300;
+					}
+
+					.time {
+						color: #1CB2C9;
+						width: 100%;
+						min-height: 15px;
+						font-size: 11px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.hub-list {
+
+	@include event-list-common();
+
+	padding-bottom: 5px;
+	.card.hub-card {
+
+		@include card-common();
+		width: 6.25rem;
+		height: 13.7rem;
+		margin-right: 0.8rem;
+		overflow: hidden;
+
+
+		.img {
+			background-image: url('http://www.fillmurray.com/300/200');
+			height: 6.25rem;
+			width: 100%;
+			display: flex;
+			background-size: cover;
+
+			.main-tag {
+				font-size: 0.75em;
+				color: white;
+				text-align: center;
+				background-color: $secondary-colour;
+				border-top-right-radius: 1.25rem;
+				border-bottom-right-radius: 1.25rem;
+				border-top-left-radius: 1.25rem;
+				border-bottom-left-radius: 1.25rem;
+				margin: 0 auto;
+				border: 0.07rem solid $primary-colour;
+				height: 2.188rem;
+				width: 5.625rem;
+				padding-top: 0.2rem;
+				margin-top: 2.5rem;
+				white-space: normal;
+				overflow: hidden;
+				padding: 4px 1px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		.text-wrapper {
+			padding-right: 0.6rem;
+			padding-left: 0.6rem;
+			text-align: center;
+			height: 52%;
+			overflow: hidden;
+
+			h5 {
+				color: $secondary-colour;
+				font-size: 0.7rem;
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+				line-height: 0.9rem;
+				font-weight: 300;
+			}
+			.break-line {
+				margin: 0 auto;
+				background-color: #E0E0E0;
+				width: 3.125rem;
+				height: 0.0625rem;
+			}
+		}
+	}
+}
+
+.speaker-list {
+
+	padding-bottom: 5px;
+	@include event-list-common();
+	margin-bottom: 3rem;
+
+
+	.card.speaker-card {
+
+		@include card-common();
+
+		margin: 0 auto;
+		width: 6.25rem;
+		height: 13.7rem;
+		margin-right: 0.85rem;
+		background-color: white;
+
+		.img {
+			height: 6.25rem;
+			width: 100%;
+			background-size: cover;
+		}
+
+		.text-wrapper {
+			padding-right: 0.6rem;
+			padding-left: 0.6rem;
+			flex: 1;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			white-space: normal;
+
+			h5 {
+				color: #1CB2C9;
+				font-size: 0.75rem;
+				font-weight: 700;
+				margin: 0 auto;
+				padding-top: 0.55rem;
+				padding-bottom: 0.25rem;
+				line-height: 0.9rem;
+				height: 2.3rem;
+				overflow: hidden;
+				min-height: 2.5rem;
+				white-space: normal;
+			}
+			.job-title {
+				color: #4D5A6F;
+				margin-top: 0.4rem;
+				font-size: 0.7em;
+				flex: 1;
+				flex-shrink: 0;
+				height: 1.563rem;
+				white-space: normal;
+				overflow: hidden;
+			}
+
+			.location {
+				font-size: 0.7em;
+				margin-top: 0.3rem;
+				margin-bottom: 0.45rem;
+				flex: 1;
+				flex-shrink: 0;
+				position: relative;
+				font-weight: 300;
+				overflow: hidden;
+			}
+
+			.nationality {
+				background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Union_flag_1606_%28Kings_Colors%29.svg');
+				background-size: cover;
+				flex-shrink: 0;
+				margin: 0 auto;
+				margin-bottom: 0.5rem;
+				height: 0.75rem;
+				width: 1.3rem;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+.listing-features-card {
+	margin: 0 auto;
+
+	width: 18.75rem;
+	height: 5.625rem;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2.188rem;
+	box-shadow: 0.1rem 0.1rem 0.1rem #c9c8cd;
+	border-radius: 3px;
+
+
+	.img {
+		height: 3.75rem;
+		width: 3.75rem;
+
+		margin-right: 0.5rem;
+		display: flex;
+		font-size: 3.5rem;
+		align-items: center;
+		justify-content: center;
+		color: $primary-colour;
+	}
+	.features-text {
+		width: 12.5rem;
+		overflow-x: auto;
+		font-size: 0.8rem;
+		font-weight: 300;
+		text-align: left;
+		line-height: 22px;
+
+	}
+}
+
+.faq-card {
+	width: 300px;
+	height: 180px;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px #c3c3c3;
+	margin: 0 auto;
+	background-color: white;
+	padding: 10px;
+
+	margin-bottom: 20px;
+
+	.faq-card-h {
+		height: 30px;
+		display: flex;
+		align-items: center;
+		color: #4d5a70;
+		font-weight: 700;
+
+
+	}
+
+	.break-line {
+		margin: unset;
+		background-color: #f5f2f2;
+		width: 6.125rem;
+		height: 0.05rem;
+		margin-top: 5px;
+	}
+	.faq-text {
+		color: #4d5a70;
+		font-weight: 200;
+		font-size: 14px;
+		padding: 5px;
+	}
+}
+
+.tweet-list {
+	height: 13rem;
+	@include event-list-common();
+
+	.tweet-card {
+
+		@include card-common();
+		margin-right: 1rem;
+		height: 12.5rem;
+		width: 10rem;
+		padding: 10px;
+
+		.title {
+			font-weight: 700;
+			font-size: 10px;
+
+			span {
+				color: gray;
+				font-weight: 300;
+
+				i {
+					margin-left: 5px;
+				}
+
+			}
+		}
+
+		.tweet {
+
+			margin: 0 auto;
+			height: 65px;
+			width: 100%;
+			font-size: 10px;
+			color: black;
+			font-weight: 300;
+			white-space: normal;
+			overflow: auto;
+			margin-top: 3px;
+		}
+		.tweet-img {
+			margin: 0 auto;
+			background: url(https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg);
+			background-size: cover;
+			height: 75px;
+			width: 140px;
+			border-radius: 3px;
+			margin-top: 5px;
+
+		}
+
+		.bottom {
+			display: flex;
+			justify-content: space-evenly;
+			color: gray;
+			font-size: 12px;
+			height: 25px;
+			align-items: center;
+		}
+
+
+	}
+}
+
+.instagram-list {
+
+	@include event-list-common();
+	height: 13rem;
+
+	width: 21rem;
+
+	.instagram-card {
+
+		@include card-common();
+		margin-right: 0.5rem;
+
+		height: 10rem;
+		width: 10rem;
+		padding: 10px;
+		background-image: url(
+		https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg);
+	}
+}
+
+.card-slider-container .slider-events {
+	.gray-bar {
+
+		h4 {
+			font-weight: 500;
+			letter-spacing: 1px;
+		}
+		.fa-instagram {
+			font-size: 25px;
+		}
+	}
+}
+
+
+@media only screen and (min-width : 900px) {
+
+
+
+	.event-list {
+		height: 11.63rem;
+
+		.card.event-card {
+
+			a {
+
+
+			}
+
+			.img {
+
+			}
+			.text-wrapper {
+
+
+				h5 {
+
+				}
+				.location {
+
+				}
+				.date {
+
+				}
+			}
+		}
+		.card.event-card:last-child {
+
+		}
+	}
+
+	.hub-button {
+
+	}
+
+
+
+
+	.video-list, .article-list {
+
+
+		.card.video-card, .card.article-card {
+
+
+			.img {
+
+				.video-length {
+
+				}
+
+			}
+			.text-wrapper {
+
+
+				h5 {
+
+				}
+			}
+		}
+	}
+	.session-list {
+
+
+
+		.session-card{
+
+
+			.room {
+
+			}
+
+			.details {
+
+
+				.topic {
+
+				}
+				.speaker {
+
+
+				}
+
+				.speaker-bot-wrapper {
+
+					.image {
+
+					}
+					.bot-right {
+
+
+						.organisation {
+
+						}
+
+						.time {
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.hub-list {
+
+
+		.card.hub-card {
+
+			.img {
+
+
+				.main-tag {
+
+				}
+			}
+			.text-wrapper {
+
+				h5 {
+
+				}
+				.break-line {
+
+				}
+			}
+		}
+	}
+
+	.speaker-list {
+
+
+		.card.speaker-card {
+
+
+			.img {
+
+			}
+
+			.text-wrapper {
+
+				h5 {
+
+				}
+				.job-title {
+
+				}
+
+				.location {
+
+				}
+
+				.nationality {
+
+				}
+			}
+		}
+	}
+
+	.listing-features-card {
+
+
+		.img {
+
+		}
+		.features-text {
+
+
+		}
+	}
+
+	.faq-card {
+
+
+		.faq-card-h {
+
+
+
+		}
+
+		.break-line {
+
+		}
+		.faq-text {
+
+		}
+	}
+
+	.tweet-list {
+
+
+		.tweet-card {
+
+
+
+			.title {
+
+
+				span {
+
+
+					i {
+
+					}
+
+				}
+			}
+
+			.tweet {
+
+			}
+			.tweet-img {
+
+
+			}
+
+			.bottom {
+
+			}
+
+
+		}
+	}
+
+	.instagram-list {
+
+		.instagram-card {
+
+		}
+	}
+
+	.card-slider-container .slider-events {
+		.gray-bar {
+
+			h4 {
+
+			}
+			.fa-instagram {
+
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	.card-list {
+
+		width: 43rem;
+
+
+	}
+
+	.arrow-container {
+		width: 46rem;
+
+		.rightArrow {
+
+			i {
+				width: 1.5rem;
+			}
+		}
+	}
+
+	.listing-features-card {
+		.features-text {
+			margin-top: 10px;
+		}
+	}
+
+}

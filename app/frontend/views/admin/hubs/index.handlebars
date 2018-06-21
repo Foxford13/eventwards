@@ -1,0 +1,19 @@
+<h1>Admin / Hubs</h1>
+<a href="/admin-hubs/new">New hub</a>
+
+
+
+<div class="hubs-container">
+	{{> card-slider content-title="Hubs"}}
+	<div class="arrow-container ">
+		<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+		<div class="hub-list card-list list-admin">
+
+			{{#each hubsIndex}}
+			{{> hub-card-admin mainTag=name slug=slug _tags=_tags _id=_id imageUrl=imageUrl}}
+			{{/each}}
+
+		</div>
+		<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+	</div>
+</div>

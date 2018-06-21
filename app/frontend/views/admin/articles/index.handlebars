@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Articles</h1>
+<a href="/admin-articles/new">New article</a>
+{{articlesIndex}}
+
+{{> card-slider content-title="Articles"   fa-choice="fa-chevron-right"}}
+<div class="arrow-container ">
+	<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+	<div class="video-list card-list list-admin">
+		{{#each articlesIndex}}
+		{{> article-card-admin imageUrl=imageUrl title=title url=url _id=_id }}
+		{{/each}}
+
+	</div>
+	<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+</div>

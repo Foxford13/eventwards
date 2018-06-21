@@ -1,0 +1,183 @@
+$primary-colour: #1CB2C9;
+$secondary-colour: #4D5A6F;
+$dark : #03042C;
+
+
+
+
+
+.speaker-pop {
+	background-color: #F5F5F5;
+	white-space: initial;
+	.speaker-header {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.background-wrapper {
+			width: 100%;
+			overflow: hidden;
+			.speaker-background {
+				width: 100%;
+				height: 14.06rem;
+				background-image: url('http://www.freeimageslive.com/galleries/nature/views/pics/english_countryside.jpg');
+				background-position: center;
+				background-size: cover;
+				display: flex;
+				filter: blur(1px);
+				position: relative;
+			}
+
+		}
+
+		.speaker-main {
+			font-weight: 300;
+			color: $secondary-colour;
+			width: 20.31rem;
+			height: 10.31rem;
+			background: white;
+			z-index: 1;
+			position: absolute;
+			display: flex;
+			box-shadow: 0.125rem 0.125rem 0.125rem #B5AFB1;
+
+
+			.speaker-image {
+				height: 10.31rem;
+				width: 10rem;
+				img {
+					height: 100%;
+					width: 10rem;
+					display: cover;
+				}
+			}
+			.details {
+				width: 10.31rem;
+				text-align: center;
+
+				.break-line {
+					background-color: #E0E0E0;
+					width: 3.125rem;
+					margin-top: 0.5rem;
+					margin-bottom: 0.5rem;
+				}
+
+
+				.name {
+					white-space: initial;
+					margin: 0 auto;
+					margin-top: 0.5rem;
+					font-size: 1.188rem;
+					margin-bottom: 0;
+					color: #2AA7DC;
+					font-weight: 700;
+					height: 2.188rem;
+					width: 6.25rem;
+
+					h5 {
+						margin-top: 0.3125rem;
+						color: #1CB2C9;
+						font-weight: 700;
+						line-height: 1.188rem;
+					}
+				}
+			}
+
+		}
+		.profession {
+			font-size: 0.75rem;
+			margin: 0 auto;
+			margin-top: 0.625rem;
+			height: 1.688rem;
+			line-height:  1.063rem;
+			width: 8.75rem;
+			white-space: initial;
+		}
+
+		.contact {
+			margin-top: 0.9375rem;
+			height: 0.9375rem;
+			font-size: 0.8125rem;
+			font-weight: 300;
+		}
+		.location {
+			margin-top: 0.3125rem;
+			color: #B0B0B0;
+			font-weight: 700;
+			font-size: 0.9375rem;
+			letter-spacing: 1px;
+		}
+
+	}
+
+	.bio-speaker {
+		min-height: 6.25rem;
+		width: 90vw;
+		margin: 0 auto;
+		color: #9b9b9b;
+		line-height: 1.563rem;
+		padding: 0.625rem;
+		font-size: 0.9375rem;
+		padding-bottom: 0px;
+
+		.read-more-state {
+			display: none;
+			p {
+				padding: 2%;
+				color: $secondary-colour;
+				border-radius: .25em;
+				width:23.44rem;
+				margin: 0 auto;
+			}
+		}
+
+		.read-more-target {
+			opacity: 0;
+			max-height: 0;
+			font-size: 0;
+		}
+		.read-more-wrap {
+			white-space: initial;
+		}
+
+		.read-more-state:checked ~ .read-more-wrap .read-more-target {
+			opacity: 1;
+			font-size: inherit;
+
+
+		}
+
+
+
+		.read-more-trigger {
+			cursor: pointer;
+			display: inline-block;
+			padding: 0 .5em;
+			color: #666;
+			font-size: .9em;
+			line-height: 2;
+			color: $primary-colour;
+			border-radius: .25em;
+
+		}
+	}
+
+	.highlights {
+		padding-bottom: 0.9375rem;
+		.title {
+			width: 300px;
+			margin: 0 auto;
+			text-align: center;
+			color: #666;
+			h5 {
+				margin-top: 0.9375rem;
+				margin-bottom: 0.9375rem;
+				font-weight: 300;
+				font-weight: 500;
+				letter-spacing: 4px;
+			}
+		}
+
+	}
+}

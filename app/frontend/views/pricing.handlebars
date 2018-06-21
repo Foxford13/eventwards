@@ -1,0 +1,201 @@
+<div class="pricing-page">
+	<div class="pricing event-pro">
+		<div class="header">
+			<h4>Event Pro Mini-Site</h4>
+		</div>
+		<div class="features">
+			All of our standard fatures
+		</div>
+		<div class="features">
+			Created & managed by Eventwards
+		</div>
+		<div class="features">
+			Unlimited content
+		</div>
+		<div class="features">
+			Schedule built for up to two tracks
+		</div>
+		<div class="features">
+			Eventwards branding on all pages
+		</div>
+		<div class="features">
+			Use any ticketing/CRM system
+		</div>
+
+		<div class="prices">
+			<span>£150 per month</span>
+			for 6 months, or £250 month to month
+		</div>
+		<div class="sign-up-container">
+			<div class="sign-up-btn">
+				30 Day Free Trial
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="pricing event-pro">
+		<div class="header green-h">
+			<h4>Lead Gen Mini-Site</h4>
+		</div>
+		<div class="features">
+			All of our Event Pro features
+		</div>
+		<div class="features">
+			Eventwards branding on all pages
+		</div>
+		<div class="features">
+			Schedule built for up to six tracks
+		</div>
+		<div class="features">
+			Dedicated account manager
+		</div>
+		<div class="features">
+			Lead capture chatbot integration
+		</div>
+		<div class="features">
+			Promotional brochure & banners
+		</div>
+
+		<div class="prices">
+			<span>£250 per month</span>
+			for 6 months, or £350 month-to-month
+		</div>
+		<div class="sign-up-container">
+			<div class="sign-up-btn green">
+				30 Day Free Trial
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="pricing event-pro">
+		<div class="header purple-h">
+			<h4>Custom Domain + Website</h4>
+		</div>
+		<div class="features">
+			All of our Event Pro & Lead Gen features
+		</div>
+		<div class="features">
+			Your own custom domain
+		</div>
+		<div class="features">
+			Your own branding on all pages
+		</div>
+		<div class="features">
+			Schedule built for up to 25 tracks
+		</div>
+		<div class="features">
+			Dedicated account manager
+		</div>
+		<div class="features">
+			Event listings for maximum traffic
+		</div>
+
+		<div class="prices">
+			<span>£450 per month</span>
+			for 6 months, or £550 month to month
+		</div>
+		<div class="sign-up-container">
+			<div class="sign-up-btn purple">
+				30 Day Free Trial
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="contact-features">
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="con-btn-container">
+			<div class="btn">
+				Contact Us
+
+			</div>
+
+		</div>
+	</div>
+	<div class="new-event">
+		<div class="new-header">
+			STARTING UP A NEW EVENT SERIES?
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+
+		<div class="con-btn-container">
+			<div class="btn-h">
+				We offer doscounts and growth assistance.
+			</div>
+			<div class="btn">
+				Apply now
+			</div>
+
+
+		</div>
+	</div>
+	<div class="contact-features standard">
+		<div class="standard-h">
+			STANDARD FEATURES
+		</div>
+
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+		<div class="feat-card">
+			{{> listing-features-card }}
+		</div>
+
+	</div>
+
+	<div class="faq">
+		<div class="faq-h">FAQ</div>
+		{{> faq-card }}
+		{{> faq-card }}
+		{{> faq-card }}
+
+
+	</div>
+
+	<div class="home-footer secondary-footer">
+
+		{{> card-slider content-title="Events"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="event-list card-list">
+
+				{{#each eventDetails}}
+				{{> event-card title=eventName location=eventLocation date=eventDate eventImage=eventImage}}
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+	</div>
+
+</div>

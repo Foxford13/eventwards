@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+
+  stack-network:
+    driver: bridge
+
+volumes:
+
+  mongodb-data:
+    driver: local
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    environment:
+      - NODE_ENV=development
+      - TZ=Europe/London
+    volumes:
+      - ./app:/src/app
+      - ./package.json:/src/package.json
+      - ./package-lock.json:/src/package-lock.json
+      - ./webpack.config.js:/src/webpack.config.js
+    ports:
+      - "7000:7000"
+    command: bash -c "npm run start-development"
+    networks:
+      - stack-network
+    restart: on-failure
+
+  mongodb:
+    image: mongo:3.4
+    networks:
+      - stack-network
+    command: mongod
+    volumes:
+      - mongodb-data:/data/db
+    restart: on-failure
+
+  mongoclient:
+    image: mongoclient/mongoclient:2.2.0
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://mongodb:27017/eventwards
+    networks:
+      - stack-network
+    ports:
+      - "3000:3000"
+    restart: on-failure

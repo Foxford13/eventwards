@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Videos / New Video</h1>
+
+
+<input id="new-video-id" type="hidden" name="">
+<form class="new-video form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="title">Title</label>
+		<input type="text" name="title"  placeholder="title">
+	</div>
+
+	<div class="info-container">
+		<label for="url">Url</label>
+		<input type="text" name="url"  placeholder="url">
+	</div>
+
+
+	<div class="info-container">
+		<label for="text">Image Url</label>
+		<input type="text" name="image"  placeholder="image">
+	</div>
+
+	<div class="info-container">
+		<label>Pick event related to this vid</label>
+
+		<select multiple class="events" name="events">
+			{{#each eventData }}
+			<option value="{{_id}}"> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Pick a hub related to this vid</label>
+		<select multiple class="hubs" name="hubs">
+			{{#each hubData }}
+			<option value="{{_id}}"> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Pick a tag related to this vid</label>
+		<select multiple class="tags" name="tags">
+			{{#each tagData }}
+			<option value="{{_id}}"> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label>Speakers</label>
+		{{eventData._speakers.length}}
+		<select multiple class="speakers" name="speakers">
+			{{#each userData }}
+			<option value="{{_id}}"> {{fullName}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label for="about">About</label>
+		<textarea type="text" name="about"  placeholder="about" value="{{videoData.about}}"></textarea>
+	</div>
+
+	<button class="admin-post-btn" type="submit" >Update the vid</button>
+
+</form>

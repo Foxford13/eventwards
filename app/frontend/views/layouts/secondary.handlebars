@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tech Sessions</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<script type="text/javascript" src="/public/bundle.js"></script>
+	<link rel="stylesheet"  href="/public/styles/style.css">
+	<link rel="stylesheet" href="/public/images/font-awesome/css/font-awesome.min.css">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-103068171-2"></script>
+
+</head>
+<body>
+	<nav>
+
+		<a href="/"><div class="nav-logo"><img src="/public/images/Logo/logo.png" alt=""></div></a>
+		{{!-- <div class="list-event-nav">LIST EVENT</div> --}}
+
+		<div class="search-input">
+			<div class="search-container">
+				<input type="search" name="main-search" placeholder="Search..">
+				<button type="submit" name="button">Go</button>
+			</div>
+		</div>
+
+		<div class="search-animation">
+			<div class="search-icon">
+				<span class="search-line main-line"></span>
+				<span class="search-circle third"></span>
+			</div>
+		</div>
+
+	</nav>
+	<div class="heya">
+		<div class="search-input-mobi">
+			<div class="search-container">
+				<input type="search" name="main-search" placeholder="Search..">
+				<button type="submit" name="button">Go</button>
+			</div>
+		</div>
+	</div>
+	<header class="header-secondary">
+
+		<div class="img" style="background-image: url({{customizeData.[0].mainPageImageUrl}})"> </div>
+
+
+	</header>
+
+	{{{body}}}
+
+	<footer>
+
+		<div class="footer-top">
+			<img src="/public/images/footer/ew-footer-full-24bit.png" alt="">
+		</div>
+
+		<div class="footer-main">
+
+			<img src="/public/images/Logo/logo.png" alt="">
+
+			<div class="footer-info">
+
+				<div class="footer-left-info">
+					<ul>
+
+					</ul>
+				</div>
+
+				<div class="footer-right-info">
+
+					FOLLOW <br> TECH SESSIONS
+					<div class="media-container">
+
+						<div class="icons-container">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</div>
+
+						<div class="icons-container">
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</div>
+
+						<div class="icons-container">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</div>
+
+						<div class="icons-container">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<div class="footer-terms-cond">
+			&copy 2018, Tech Sessions | <div class="openpop-con">Contact us</div>
+		</div>
+
+		<div id="openpop-con-id" class="modal">
+
+			<div class="modal-content">
+
+				<!-- The Modal Content -->
+			</div>
+
+		</div>
+	</footer>
+</body>
+</html>

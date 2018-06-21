@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Events / Edit Event</h1>
+
+		{{eventData.imageUrl}}
+<input id="edit-event-id" type="hidden" name="" value="{{eventData._id}}">
+
+<form class="edit-event form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="name">Name</label>
+		<input type="text" name="name"  placeholder="name" value="{{eventData.name}}">
+	</div>
+
+	<div class="info-container">
+		<label for="email">Email</label>
+		<input type="email" name="email"  placeholder="email" value="{{eventData.email}}">
+	</div>
+
+	<div class="info-container">
+		<label for="tito-id">tit.to id</label>
+		<input class="tito-id" type="text" name="tito-id"  placeholder="tito-id">
+	</div>
+
+	<div class="info-container">
+		<label for="time-from">Starting time (24h)</label>
+		<input type="time" name="time-from"  placeholder="time-from" value="{{eventData.eventDate.startTime}}">
+	</div>
+
+	<div class="info-container">
+		<label for="time-to">Ending time (24h)</label>
+		<input type="time" name="time-to"  placeholder="time-to" value="{{eventData.eventDate.finishTime}}">
+	</div>
+
+	<div class="info-container">
+		<label for="date-from">Date from</label>
+		<input type="date" name="date-from"  placeholder="date-from" value="{{eventData.eventDate.start}}">
+	</div>
+
+	<div class="info-container">
+		<label for="date-to">Date to</label>
+		<input type="date" name="date-to"  placeholder="date-to" value="{{eventData.eventDate.finish}}">
+	</div>
+
+	<div class="info-container">
+		<label for="image-file-name">Event Card Image</label>
+		<input type="text" name="image-file-name"  placeholder="image-file-name" value="{{eventData.imageFileName}}">
+	</div>
+
+	<div class="info-container">
+		<label for="hashtag-organiser">Hashtag Organiser</label>
+		<input type="text" name="hashtag-organiser"  placeholder="hashtag-organiser" value="{{eventData.hashtagOrganiser}}">
+	</div>
+
+	<div class="info-container">
+		<label for="organiser-logo-url">Organiser Logo Url</label>
+		<input type="text" name="organiser-logo-url"  placeholder="organiser-logo-url" value="{{eventData.organiserLogoUrl}}">
+	</div>
+
+
+	<div class="info-container">
+		<label for="quote">Quote</label>
+		<input type="text" name="quote"  placeholder="quote" value="{{eventData.quote}}">
+	</div>
+
+	<div class="info-container">
+		<label for="background-img-url">Background Image Url</label>
+
+		<input type="text" name="background-img-url"  placeholder="background-img-url" value="{{eventData.backgroundImageUrl}}">
+	</div>
+
+	<div class="info-container">
+		<label for="location">Location</label>
+		<input type="text" name="location"  placeholder="location" value="{{eventData.location}}">
+	</div>
+
+	<div class="social-admin-form">
+		<h4 class="admin-section-title">Social messages</h4>
+		<div class="info-container">
+			<label for="social-twitter">Twitter</label>
+			<textarea class="social-twitter" type="text" name="social-twitter"  placeholder="social-twitter" value="{{eventData.social.messages.twitter}}">
+			{{~eventData.social.messages.twitter~}}</textarea>
+		</div>
+
+		<div class="info-container">
+			<label for="social-facebook">Facebook</label>
+			<textarea class="social-facebook" type="text" name="social-facebook"  placeholder="social-facebook" value="{{eventData.social.messages.facebook}}">
+			{{~eventData.social.messages.facebook~}}</textarea>
+		</div>
+
+		<div class="info-container">
+			<label for="social-linkedin">Linkedin</label>
+			<textarea class="social-linkedin" type="text" name="social-linkedin"  placeholder="social-linkedin" value="{{eventData.social.messages.linkedin}}">
+				{{~eventData.social.messages.linkedin~}}</textarea>
+		</div>
+
+	</div>
+
+	<div class="info-container">
+		<label for="about">About</label>
+		<textarea type="textarea" name="about"  placeholder="about" value="{{eventData.about}}">{{eventData.about}}</textarea>
+	</div>
+
+	<div class="info-container takeways-append">
+		<label for="takeaways">Takeaways</label>
+		<div class="takeaways">
+			{{eventData.takeaways}}
+			{{#each eventData.takeaways }}
+			<input type="text" name="takeaways"  class="takeaways-value" placeholder="takeaways" value="{{this}}">
+			{{/each}}
+		</div>
+	</div>
+	<button class="takeaways-content-btn">Add more</button>
+
+	<div class="info-container">
+		<label>Speakers</label>
+		<select multiple class="" name="speakers">
+
+			{{#each userData }}
+			<option value="{{_id}}" {{selected _id ../eventData._speakers}}> {{fullName}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label >Organiser</label>
+		<select class="organiser" name="organiser">
+
+			<option style="display:none"></option>
+			{{#each userData }}
+			<option value="{{_id}}" {{selected _id ../eventData._organiser}} > {{fullName}} </option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Article</label>
+		<select multiple class="multiple-select-admin articles" name="articles">
+
+			{{#each articleData }}
+			<option value="{{_id}}" {{selected _id ../eventData._articles}}> {{title}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Tags</label>
+		<select multiple class="multiple-select-admin tags" name="tags">
+
+			{{#each tagData }}
+			<option value="{{_id}}" {{selected _id ../eventData._tags}}> {{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Videos</label>
+		<select multiple class="multiple-select-admin videos" name="videos">
+
+			{{#each videoData }}
+			<option value="{{_id}}" {{selected _id ../eventData._videos}}> {{title}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+	<div class="info-container">
+		<label>Hubs</label>
+		<select multiple class="multiple-select-admin hubs" name="hubs">
+
+			{{#each hubData }}
+			<option value="{{_id}}" {{selected _id ../eventData._hubs}}> {{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+
+
+
+	<div class="sponsors-admin alternate-color-admin-form">
+		<h4>Platinum sponsors</h4>
+		<div class="sponsor-append">
+			<div class="plat">
+
+				{{#each eventData.partners.platinumSponsors }}
+				<div class="pack">
+					<label for="plat-name">Name</label>
+					<input class="plat-name" type="text" name="plat-name"  placeholder="plat-linkedin" value="{{name}}">
+
+					<label for="plat-filename">Sponsor Logo Url</label>
+					<input class="plat-filename" type="text" name="plat-filename"  placeholder="plat-filename" value="{{sponsorLogoUrl}}">
+
+					<label for="plat-url">Sponsor Page Url</label>
+					<input class="plat-url" type="text" name="plat-url"  placeholder="plat-url" value="{{sponsorPageUrl}}">
+				</div>
+
+
+				{{/each}}
+			</div>
+		</div>
+		<button class="plat-content-btn">Add more</button>
+
+		<div class="new-sponsors">
+			<h4>Gold sponsors</h4>
+			<div class="sponsor-append">
+				<div class="gold">
+					{{#each eventData.partners.goldSponsors }}
+					<div class="pack">
+
+						<label for="gold-name">Name</label>
+						<input class="gold-name" type="text" name="gold-name"  placeholder="gold-linkedin" value="{{name}}">
+
+						<label for="gold-filename">Sponsor Logo Url</label>
+						<input class="gold-filename" type="text" name="gold-filename"  placeholder="gold-filename" value="{{sponsorLogoUrl}}">
+
+						<label for="gold-url">Sponsor Page Url</label>
+						<input class="gold-url" type="text" name="gold-url"  placeholder="gold-url" value="{{sponsorPageUrl}}">
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+		<button class="gold-content-btn">Add more</button>
+
+
+		<div class="new-sponsors">
+			<h4>Silver sponsors</h4>
+			<div class="sponsor-append">
+				<div class="silv">
+
+					{{#each eventData.partners.silverSponsors }}
+					<div class="pack">
+
+
+						<label for="silv-name">Name</label>
+						<input class="silv-name" type="text" name="silv-name"  placeholder="silv-linkedin" value="{{name}}">
+
+						<label for="silv-filename">Sponsor Logo Url</label>
+						<input class="silv-filename" type="text" name="silv-filename"  placeholder="silv-filename" value="{{sponsorLogoUrl}}">
+
+						<label for="silv-url">Sponsor Page Url</label>
+						<input class="silv-url" type="text" name="silv-url"  placeholder="silv-url" value="{{sponsorPageUrl}}">
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+		<button class="silv-content-btn">Add more</button>
+
+		<div class="new-sponsors">
+			<h4>Bronze sponsors</h4>
+			<div class="sponsor-append">
+				<div class="bron">
+
+					{{#each eventData.partners.bronzeSponsors }}
+					<div class="pack">
+
+
+						<label for="bron-name">Name</label>
+						<input class="bron-name" type="text" name="bron-name"  placeholder="bron-linkedin" value="{{name}}">
+
+						<label for="bron-filename">Sponsor Logo Url</label>
+						<input class="bron-filename" type="text" name="bron-filename"  placeholder="bron-filename" value="{{sponsorLogoUrl}}">
+
+						<label for="bron-url">Sponsor Page Url</label>
+						<input class="bron-url" type="text" name="bron-url"  placeholder="bron-url" value="{{sponsorPageUrl}}">
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+		<button class="bron-content-btn">Add more</button>
+
+		<div class="new-sponsors">
+			<h4>Med sponsors</h4>
+
+			<div class="sponsor-append">
+				<div class="med">
+
+					{{#each eventData.partners.media }}
+					<div class="pack">
+
+
+						<label for="med-name">Name</label>
+						<input class="med-name" type="text" name="med-name"  placeholder="med-linkedin" value="{{name}}">
+
+						<label for="med-filename">Sponsor Logo Url</label>
+						<input class="med-filename" type="text" name="med-filename"  placeholder="med-filename" value="{{sponsorLogoUrl}}">
+
+						<label for="med-url">Sponsor Page Url</label>
+						<input class="med-url" type="text" name="med-url"  placeholder="med-url" value="{{sponsorPageUrl}}">
+
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+		<button class="med-content-btn">Add more</button>
+
+	</div>
+	<div class="session">
+		<h4>Session</h4>
+
+		{{#each sessionsData }}
+		<div class="sess-cont ">
+			<input class="session-id" type="hidden" name="session-id"  placeholder="session-id" value="{{_id}}">
+
+			<div class="info-container">
+				<label for="session-topic">Topic</label>
+				<input class="session-topic" type="text" name="session-topic"  placeholder="session-topic" value="{{topic}}">
+			</div>
+
+			<div class="info-container">
+				<label for="session-stage">session-stage</label>
+				<input class="session-stage" type="text" name="session-stage"  placeholder="session-stage" value="{{stage}}">
+			</div>
+
+			<div class="info-container">
+				<label for="session-time-from">Starting time</label>
+				<input type="time" name="session-time-from"  class="session-time-from" placeholder="session-time-from" value="{{sessionTimes.start}}">
+			</div>
+
+
+			<div class="info-container">
+
+				<label for="session-time-to">End</label>
+				<input type="time" name="session-time-to"  class="session-time-to" placeholder="session-time-to" value="{{sessionTimes.finish}}">
+
+			</div>
+			<div class="info-container">
+				<label>Speakers</label>
+
+				<select multiple id="{{_id}}" class="session-speakers" name="session-speakers">
+
+					{{#each ../userData }}
+					<option value="{{_id}}" {{selected _id ../_speakers}}> {{fullName}}</option>
+					{{/each}}
+
+				</select>
+			</div>
+			<button class="delete-session-btn" type="button" name="button">Delete session</button>
+
+		</div>
+		{{/each}}
+
+		<button class="session-content-btn">Add more</button>
+	</div>
+
+	<button class="admin-post-btn bottom" type="submit">Edit event</button>
+
+</form>

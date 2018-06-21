@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Tags / New Tag</h1>
+
+
+<input id="new-tag-id" type="hidden" name="">
+
+<form class="new-tag form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="name">Name</label>
+		<input type="text" name="name"  placeholder="name" >
+	</div>
+
+	<div class="info-container">
+		<label for="slug">slug</label>
+		<input type="text" name="slug"  placeholder="slug">
+	</div>
+
+
+	<div class="info-container">
+		<label>article</label>
+		<select multiple class="multiple-select-admin articles" name="articles">
+
+			{{#each articleData }}
+			<option value="{{_id}}">{{title}}</option>
+			{{/each}}
+
+		</select>
+
+	</div>
+
+	<div class="info-container">
+		<label>Videos</label>
+
+		<select multiple class="multiple-select-admin videos" name="videos">
+
+			{{#each videoData }}
+			<option value="{{_id}}">{{title}}</option>
+			{{/each}}
+
+		</select>
+
+	</div>
+
+	<div class="info-container">
+		<label>Hubs</label>
+
+		<select multiple class="multiple-select-admin hubs" name="hubs">
+
+			{{#each hubData }}
+			<option value="{{_id}}">{{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label>Speakers</label>
+
+		<select multiple class="multiple-select-admin speakers" name="hubs">
+
+			{{#each userData }}
+			<option value="{{_id}}" {{selected _id ../tagData._speakers}}> {{fullName}}</option>
+			{{/each}}
+
+		</select>
+
+	</div>
+
+	<div class="info-container">
+		<label>Organisers</label>
+
+		<select multiple class="multiple-select-admin organisers" name="hubs">
+
+			{{#each userData }}
+			<option value="{{_id}}" {{selected _id ../tagData._organisers}}> {{fullName}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+	<div class="info-container">
+		<label>Events</label>
+		<select multiple class="multiple-select-admin events" name="hubs">
+
+			{{#each eventData }}
+			<option value="{{_id}}" {{selected _id ../tagData._events}}> {{name}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+
+
+	<button class="admin-post-btn" type="submit" >Edit Tag</button>
+
+</form>

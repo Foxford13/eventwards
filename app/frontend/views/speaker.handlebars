@@ -1,0 +1,75 @@
+<div class="speaker-pop">
+	<div class="close-modal"><i class="fa fa-times" aria-hidden="true"></i></div>
+	<div class="speaker-header">
+		<div class="background-wrapper">
+			<div class="speaker-background" style="background-image: url({{ speakerData.backgroundImageUrl }})"></div>
+		</div>
+
+		<div class="speaker-main">
+			<div class="speaker-image">
+				<img src="{{speakerData.imageUrl}}" alt="">
+			</div>
+			<div class="details">
+				<div class="name">
+					<h5>{{speakerData.fullName}} </h5>
+				</div>
+				<div class="break-line"></div>
+				<div class="profession">
+					{{speakerData.profession}}
+				</div>
+
+				<div class="contact">
+					{{speakerData.organisation}}
+				</div>
+				<div class="break-line"></div>
+				<div class="location">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>{{speakerData.location}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bio-speaker">
+
+		{{speakerData.bio}}
+
+	</div>
+
+	<div class="highlights">
+		<div class="title">
+			<h5>HIGHLIGHTS</h5>
+		</div>
+
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="video-list event-list card-list">
+
+
+
+				{{#if eventsData}}
+				{{#each eventsData}}
+				{{> event-card title=name location=location eventImage=imageFileName _id=_id}}
+				{{/each}}
+				{{/if}}
+
+				{{#if videosData}}
+				{{#each videosData }}
+				{{> video-card videoTitle=title videoLength=duration videoImage=videoImage _id =_id }}
+				{{/each}}
+				{{/if}}
+
+				{{#if articlesData}}
+				{{#each articlesData }}
+				{{> article-card title=title imageUrl=imageUrl url=url}}
+				{{/each}}
+				{{/if}}
+
+
+
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="card user-card">
+	<div id="{{ _id }}" class="link openpop">
+		<div class="img" style="background-image: url({{ imageUrl }})"></div>
+
+		<div class="text-wrapper">
+			<h5>{{ fullName }}</h5>
+			<div class="job-title">{{ profession }}</div>
+			<div class="location">[{{ location }}]</div>
+			<div class="nationality" style="background-image: url({{ nationality }})"></div>
+		</div>
+		<a href="/admin-users/{{_id}}/edit">Edit</a>
+		<button class="btn-delete-user"id="{{_id}}">Delete</button>
+	</div>
+</div>

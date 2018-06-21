@@ -1,0 +1,20 @@
+<h1>Admin / Videos</h1>
+<a href="/admin-videos/new">New video</a>
+<div class="">
+
+</div>
+
+	<div class="videos-container">
+		{{> card-slider content-title="Videos"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="video-list card-list">
+
+				{{#each videosIndex }}
+				{{> video-card-admin title=title duration=duration url=url _id =_id image=image}}
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+	</div>

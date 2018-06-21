@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tech Sessions</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<script type="text/javascript" src="/public/bundle.js"></script>
+	<link rel="stylesheet"  href="/public/styles/style.css">
+	<link rel="stylesheet" href="/public/images/font-awesome/css/font-awesome.min.css">
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-103068171-2"></script>
+
+
+
+
+</head>
+<body class="admin">
+	<nav>
+
+		<a href="/"><div class="nav-logo"><img src="/public/images/Logo/logo.png" alt=""></div></a>
+		{{!-- <div class="list-event-nav">LIST EVENT</div> --}}
+
+		<div class="search-input">
+			<form class="search-container search-bar-main" method="post">
+				<input class="main-search-bar" type="search" name="main-search" placeholder="Search..">
+				<button type="submit" name="button">Go</button>
+			</form>
+		</div>
+
+		<div class="search-animation">
+			<div class="search-icon">
+				<span class="search-line main-line"></span>
+				<span class="search-circle third"></span>
+			</div>
+		</div>
+
+	</nav>
+
+	<div class="search-input-mobi search-input">
+		<form class="search-container search-bar-main" method="post">
+			<input class="main-search-bar" type="search" name="main-search" placeholder="Search..">
+			<button type="submit" name="button">Go</button>
+		</form>
+
+	</div>
+<div class="admin-nav">
+	<a href="/admin-events">Events</a>
+	<a href="/admin-videos">Videos</a>
+	<a href="/admin-tags">Tags</a>
+	<a href="/admin-hubs">Hubs</a>
+	<a href="/admin-users">Users</a>
+	<a href="/admin-articles">Articles</a>
+	<a href="/customize-page">Customize Page</a>
+</div>
+
+	{{{body}}}
+
+
+
+</body>
+</html>

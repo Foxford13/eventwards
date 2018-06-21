@@ -1,0 +1,19 @@
+<h1>Admin / Tags</h1>
+
+<a href="/admin-tags/new">New tag</a>
+
+<div class="arrow-container">
+	<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+
+	<div class="video-list card-list">
+
+		{{#each tagsIndex}}
+		{{ name }}
+		<a href="/admin-tags/{{_id}}/edit">Edit</a>
+		<button class="btn-delete-tag"id="{{_id}}">Delete {{_id}}</button>
+		{{/each}}
+
+	</div>
+
+	<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+</div>

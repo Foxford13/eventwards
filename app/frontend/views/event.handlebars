@@ -1,0 +1,354 @@
+
+<div class="event-page">
+	<div class="event-header">
+		<div class="event-landing-img" style="background-image: url({{eventData.backgroundImageUrl}})">
+			<div class="event-title"><h4>{{eventData.name}}</h4></div>
+			<div class="mid-location">
+				<div class="location">
+					<h5>{{eventData.location}}</h5>
+				</div>
+				<div class="address">
+					<h5>{{eventData.address}}Temporary adress 76</h5>
+				</div>
+				<div class="dates"><h5>{{eventDates.start}} - {{eventDates.finish}}</h5>
+				</div>
+			</div>
+
+
+			<div class="dates"><h4> {{eventTimes.start}}  {{eventDates.start}} - {{eventDates.finish}}</h4></div>
+
+
+			<div class="bot-header desktop">
+				<div class="quote">"{{eventData.quote}}"</div>
+				<div class="organiser">{{eventData._organiser.fullName}}</div>
+			</div>
+
+
+					<div class="buy-tickets desktop-btn">
+						<tito-button class="btn" event="{{eventData.titoId}}">Buy tickets</tito-button>
+					</div>
+			<div class="bot-header">
+				<div class="quote">"{{eventData.quote}}"</div>
+				<div class="organiser">{{eventData._organiser.fullName}}</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div class="share-tickets-wrapper">
+		<div class="share-links">
+			<div class="share-event">
+				SHARE EVENT
+			</div>
+			<div class="links-container">
+				<div class="icons-container twitter">
+					<a
+					href="https://twitter.com/intent/tweet?text={{eventData.social.messages.twitter}}+http://localhost:7000/event/{{eventDetails._id}}">
+					<i class="fa fa-twitter" aria-hidden="true"></i></a>
+				</div>
+
+				<div class="icons-container facebook">
+					<div  data-href="http://localhost:7000/admin-events" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A7000%2Fadmin-events&amp;src=sdkpreparse">	<i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+
+				</div>
+
+				<div class="icons-container linkedin">
+					<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:7000/&title={{eventData.name}}&summary=great%20events%20every%20day&source=stackoverflow.com&text={{eventData.social.messages.linkedin}}&source=stackoverflow.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+				</div>
+
+				<div class="icons-container">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+				</div>
+
+			</div>
+			<div class="hash-link">
+
+				{{#if eventData.hashtagOrganiser}}
+				#{{eventData.hashtagOrganiser}}
+				{{/if}}
+			</div>
+		</div>
+
+
+		<div class="buy-tickets">
+			<tito-button class="btn" event="{{eventData.titoId}}">Buy tickets</tito-button>
+		</div>
+	</div>
+
+	<div class="event-desktop-wrapper">
+		<div class="white-background-wrapper eminem">
+			<div class="event-about">
+
+				{{ eventData.about }} <div class="takeaways-trigger">KEY TAKEAWAYS </div>
+				<div class="takeaways hidden-display">
+					<h4>KEY TAKEAWAYS</h4>
+
+					{{#each eventData.takeaways}}
+					<ul>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i> {{this}}</li>
+
+					</ul>
+					{{/each}}
+
+				</div>
+
+			</div>
+
+
+			{{#if eventData._hubs.length}}
+			<div class="event-hubs">
+
+				<h4>HUBS</h4>
+				{{#each eventData._hubs}}
+				{{> hub-button title=name}}
+				{{/each}}
+			</div>
+			{{/if}}
+
+			<div class="share-links desktop">
+				<div class="share-event">
+					SHARE EVENT
+				</div>
+				<div class="links-container">
+					<div class="icons-container twitter">
+						<a
+						href="https://twitter.com/intent/tweet?text={{eventData.social.messages.twitter}}+http://localhost:7000/event/{{eventDetails._id}}">
+						<i class="fa fa-twitter" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="icons-container facebook">
+						<div  data-href="http://localhost:7000/admin-events" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A7000%2Fadmin-events&amp;src=sdkpreparse">	<i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+
+					</div>
+
+					<div class="icons-container linkedin">
+						<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:7000/&title={{eventData.name}}&summary=great%20events%20every%20day&source=stackoverflow.com&text={{eventData.social.messages.linkedin}}&source=stackoverflow.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+					</div>
+
+					<div class="icons-container">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					</div>
+
+				</div>
+				<div class="hash-link">
+
+					{{#if eventData.hashtagOrganiser}}
+					#{{eventData.hashtagOrganiser}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+
+
+		{{#if eventData._speakers.length}}
+		{{> card-slider content-title="Speakers" fa-choice="fa-chevron-right"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="speaker-list card-list">
+
+				{{#each eventData._speakers}}
+				{{> speaker-card fullName=fullName profession=profession location=location nationality=nationality imageUrl=imageUrl _id=id }}
+
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+		{{/if}}
+
+		{{#if eventHighlights.length}}
+		{{> card-slider content-title="Highlights" fa-choice="fa-chevron-right"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="speaker-list card-list">
+
+				{{#each speakerData}}
+				{{> speaker-card fullName=fullName profession=profession location=location nationality=nationality imageUrl=imageUrl _id=id }}
+
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+		{{/if}}
+
+		{{#if sessionsData.length}}
+		{{> card-slider content-title="Session" fa-choice="fa-chevron-right"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="session-list card-list">
+
+				{{#each sessionsData}}
+				{{> session-card room=stage topic=topic speaker=_speakers.[0].fullName speakerProfession=_speakers.[0].location organisation='Scy-fy' start=sessionTimes.start finish=sessionTimes.finish speakerImage=_speakers.[0].imageUrl}}
+				{{/each}}
+
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+		{{/if}}
+
+
+		{{#if eventData._videos.length}}
+		{{> card-slider content-title="Videos" fa-choice="fa-chevron-right"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="video-list card-list">
+
+				{{#each eventData._videos}}
+				{{> video-card videoTitle=title videoLength=duration image=image _id =_id }}
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+		{{/if}}
+
+		{{#if eventData._articles.length}}
+		{{> card-slider content-title="Articles"   fa-choice="fa-chevron-right"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="article-list card-list">
+
+
+
+				{{#each eventData._articles }}
+				{{> article-card title=title imageUrl=imageUrl url=url}}
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+		{{/if}}
+
+		{{#if eventData.partners.platinumSponsors.length}}
+		<div class="organised-by">
+			<div class="intro">ORGANISED BY</div>
+			<div class="logo-container">
+
+				{{#each eventData.partners.platinumSponsors}}
+				{{#if sponsorPageUrl}}
+				<a href="{{sponsorPageUrl}}"><img src="{{sponsorPageUrl}}" alt=""></a>
+				{{else}}
+				<img src="{{sponsorLogoUrl}}" alt="">
+				{{/if}}
+				{{/each}}
+
+			</div>
+			<div class="btn contact-organiser-btn">Contact organiser</div>
+			<input hidden type="text" class="contact-organizer-id" value="{{eventData._id}}">
+		</div>
+
+		<div class="sponsors">
+			{{#if eventData.partners.platinumSponsors.length}}
+			<div class="platinum">
+				<div class="header">PLATINUM SPONSORS</div>
+				<div class="logo-container">
+
+					{{#each eventData.partners.platinumSponsors}}
+					{{#if sponsorPageUrl}}
+					<a href="{{sponsorPageUrl}}"><img src="{{sponsorLogoUrl}}" alt=""></a>
+					{{else}}
+					<img src="{{sponsorLogoUrl}}" alt="">
+					{{/if}}
+					{{/each}}
+
+				</div>
+			</div>
+			{{/if}}
+
+			{{#if eventData.partners.media.length}}
+			<div class="media">
+				<div class="header">MEDIA PARTNERS</div>
+				<div class="logo-container">
+
+					{{#each eventData.partners.media}}
+					{{#if sponsorPageUrl}}
+					<a href="{{sponsorPageUrl}}"><img src="{{sponsorLogoUrl}}" alt=""></a>
+					{{else}}
+					<img src="{{sponsorLogoUrl}}" alt="">
+					{{/if}}
+					{{/each}}
+
+				</div>
+			</div>
+			{{/if}}
+
+			{{#if eventData.partners.goldSponsors.length}}
+			<div class="gold">
+				<div class="header">GOLD PARTNERS</div>
+				<div class="logo-container">
+
+					{{#each eventData.partners.goldSponsors}}
+					{{#if sponsorPageUrl}}
+					<a href="{{sponsorPageUrl}}"><img src="{{sponsorLogoUrl}}" alt=""></a>
+					{{else}}
+					<img src="{{sponsorLogoUrl}}" alt="">
+					{{/if}}
+					{{/each}}
+
+				</div>
+			</div>
+			{{/if}}
+
+
+			{{#if eventData.partners.silverSponsors.length}}
+			<div class="gold">
+				<div class="header">SILVER PARTNERS</div>
+				<div class="logo-container">
+
+					{{#each eventData.partners.silverSponsors}}
+					{{#if sponsorPageUrl}}
+					<a href="{{sponsorPageUrl}}"><img src="{{sponsorLogoUrl}}" alt=""></a>
+					{{else}}
+					<img src="{{sponsorLogoUrl}}" alt="">
+					{{/if}}
+					{{/each}}
+
+				</div>
+			</div>
+			{{/if}}
+
+			{{#if eventData.partners.bronzeSponsors.length}}
+			<div class="gold">
+				<div class="header">BRONZE PARTNERS</div>
+				<div class="logo-container">
+
+					{{#each eventData.partners.bronzeSponsors}}
+					{{#if sponsorPageUrl}}
+					<a href="{{sponsorPageUrl}}"><img src="{{sponsorLogoUrl}}" alt=""></a>
+					{{else}}
+					<img src="{{sponsorLogoUrl}}" alt="">
+					{{/if}}
+					{{/each}}
+
+				</div>
+			</div>
+			{{/if}}
+
+		</div>
+		{{/if}}
+
+	</div>
+
+	<div class="home-footer secondary-footer">
+
+		{{> card-slider content-title="Events"}}
+		<div class="arrow-container">
+			<div class="leftArrow hidden"><i class=" fa fa-chevron-left" aria-hidden="true" i></i></div>
+			<div class="event-list card-list">
+
+				{{#each advertisedEventsData}}
+		{{> event-card title=name location=location dateStart=eventDate.start   dateFinish=eventDate.finish eventImage=imageFileName _id=_id}}
+				{{/each}}
+
+			</div>
+			<div class="rightArrow"><i class=" fa fa-chevron-right" aria-hidden="true" i></i></div>
+		</div>
+	</div>
+
+	</div>

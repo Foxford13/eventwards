@@ -1,0 +1,25 @@
+{
+	"containerDefinitions": [{
+		"name": "ts-app",
+		"image": "160107473855.dkr.ecr.us-east-2.amazonaws.com/ts-app:latest",
+		"memoryReservation": 128,
+		"essential": true,
+		"portMappings": [{
+			"containerPort": 5000,
+			"hostPort": 0,
+			"protocol": "tcp"
+		}],
+		"environment": [{
+			"name": "NODE_ENV",
+			"value": "production"
+		}],
+		"logConfiguration": {
+			"logDriver": "awslogs",
+			"options": {
+				"awslogs-region": "{{REPLACE_ME}}",
+				"awslogs-group": "tech-sessions/production",
+				"awslogs-stream-prefix": "app"
+			}
+		}
+	}]
+}

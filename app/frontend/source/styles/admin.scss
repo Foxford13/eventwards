@@ -1,0 +1,334 @@
+
+$primary-colour: #1CB2C9;
+$secondary-colour: #4D5A6F;
+$dark : #03042C;
+
+body.admin {
+	background: #D6ECEF;
+}
+
+
+@mixin header-title-home() {
+	border-top: 0.125rem solid $primary-colour;
+	background-color: white;
+	position:absolute;
+	bottom:0;
+	width:  18.75rem;
+	height: 4.063rem;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border-radius: 3px;
+	text-align: center;
+}
+
+@mixin search-styling-nav() {
+	display: block;
+	transition: height 1s;
+
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.search-container {
+		overflow: hidden;
+		border-radius: 4px;
+		display: flex;
+		border: 0.05rem solid $secondary-colour;
+
+		input {
+			-webkit-appearance: none;
+			border: none;
+			float: right;
+			width: 15rem;
+			height: 35px;
+			padding-left: 0.5rem;
+			border-radius: 0px;
+		}
+		button {
+			color: gray;
+			float: right;
+			height: 35px;
+			border: none;
+			border-radius: unset;
+			background: white;
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+
+.user-list {
+
+	height: 18rem;
+	@include event-list-common();
+	margin-bottom: 3rem;
+
+
+	.card.user-card {
+
+		@include card-common();
+
+		margin: 0 auto;
+		width: 6.25rem;
+		height: 13.7rem;
+		margin-right: 0.85rem;
+		background-color: white;
+
+		.img {
+			height: 6.25rem;
+			width: 100%;
+			background-size: cover;
+		}
+
+		.text-wrapper {
+			padding-right: 0.6rem;
+			padding-left: 0.6rem;
+			flex: 1;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+
+			h5 {
+				color: $primary-colour;
+				font-size: 0.75rem;
+				font-weight: 700;
+				margin: 0 auto;
+				padding-top: 0.55rem;
+				padding-bottom: 0.25rem;
+				line-height: 0.9rem;
+				min-height: 2.5rem;
+			}
+			.job-title {
+				color: $secondary-colour;
+				margin-top: 0.4rem;
+				font-size: 0.7em;
+				flex: 1;
+				flex-shrink: 0;
+				min-height: 1.563rem;
+				white-space: normal;
+				overflow: auto;
+			}
+
+			.location {
+				font-size: 0.7em;
+				margin-top: 0.6rem;
+				margin-bottom: 0.45rem;
+				flex: 1;
+				flex-shrink: 0;
+				position: relative;
+				font-weight: 300;
+			}
+
+			.nationality {
+				background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Union_flag_1606_%28Kings_Colors%29.svg');
+				background-size: cover;
+				flex-shrink: 0;
+				margin: 0 auto;
+				margin-bottom: 0.5rem;
+				height: 0.75rem;
+				width: 1.3rem;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+
+
+.list-admin {
+	width: 80vw;
+	height: 15rem;
+	overflow: unset;
+	overflow-x: unset;
+	white-space: normal;
+		margin: 0 auto;
+
+
+		.admin-card {
+
+			button, a.edit-link {
+				text-align: center;
+				text-decoration: none;
+				color: white;
+				margin: 0 auto;
+				margin-top: 5px;
+				width: 85px;
+				background-color: $primary-colour;
+			 border-radius: 10px;
+			}
+			.text-wrapper {
+				.date {
+					min-height: 10px;
+				}
+			}
+		}
+
+	.card.event-card {
+		margin-top: 10px;
+		height: 350px ;
+	}
+}
+
+
+.multiple-select-admin {
+	width: 23rem;
+}
+
+
+
+.admin-nav {
+	background-color: #333;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.admin-nav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.admin-nav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+.admin-nav a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+
+h1.form-admin-title {
+	height: 100px;
+
+	padding: 10px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+form.form-admin {
+	border-radius: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #9fd5dc;
+	width: 80%;
+	margin: 0 auto;
+
+	button {
+		border-radius: 10px;
+	}
+
+	.social-admin-form {
+		background-color: #b7cdd0;
+		padding: 10px 0 10px 0;
+		margin-bottom: 10px;
+	}
+	.alternate-color-admin-form {
+		background-color: #b7cdd0;
+		padding-bottom: 15px;
+	}
+
+	.info-container {
+		width: 100%;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+
+		label {
+			width: 35%;
+
+		}
+		select {
+			width: 40%;
+
+		}
+		input {
+			width: 40%;
+		}
+		.takeaways {
+
+		}
+		input {
+			width: 40%;
+		}
+		textarea {
+			width: 40%;
+			height: 200px;
+		}
+
+		.takeaways {
+			width: 40%;
+			input {
+				width: 100%;
+			}
+		}
+
+	}
+
+	button {
+		margin: 0 auto;
+		display: flex;
+		margin-bottom: 10px;
+	}
+
+	h4.admin-section-title {
+		width: 100%;
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+	}
+	.sponsors-admin {
+
+		button {
+			margin: 0 auto;
+
+
+			margin-top: 10px;
+			display: flex;
+		}
+
+		.pack {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+	}
+	h4 {
+		text-align: center;
+	}
+	.session {
+		padding-bottom: 15px;
+		button {
+			margin: 0 auto;
+			display: flex;
+			margin-bottom: 10px;
+		}
+	}
+
+	button.bottom {
+
+		display: flex;
+		margin: 0 auto;
+		margin-top: 10px;
+
+	}
+}

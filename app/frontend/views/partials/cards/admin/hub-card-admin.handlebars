@@ -1,0 +1,13 @@
+<div class="card hub-card card">
+	<div class="img" style="background-image:url({{imageUrl}})"><div class="main-tag">{{ mainTag }}</div></div>
+	<div class="text-wrapper">
+
+		{{#each _tags}}
+		<div class="break-line"></div>
+		<h5>{{name}}</h5>
+		{{/each}}
+		<a href="/admin-hubs/{{_id}}/edit">Edit</a>
+		<button class="btn-delete-hub" id="{{_id}}">Delete</button>
+
+	</div>
+</div>

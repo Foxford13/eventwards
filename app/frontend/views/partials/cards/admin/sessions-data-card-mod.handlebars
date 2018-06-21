@@ -1,0 +1,35 @@
+<div class="session">
+	<h1>Session</h1>
+
+	<div class="">
+		<label for="session-topic">Topic</label>
+		<input class="session-topic" type="text" name="session-topic"  placeholder="session-topic" value="{{topic}}">
+	</div>
+
+	<div class="">
+		<label for="session-stage">session-stage</label>
+		<input class="session-stage" type="text" name="session-stage"  placeholder="session-stage" value="{{stage}}">
+	</div>
+
+	<div class="">
+		<label for="session-time-from">Starting time</label>
+		<input type="time" name="session-time-from"  placeholder="session-time-from" value="{{start}}">
+	</div>
+
+
+	<div class="">
+		<label for="session-time-to">End</label>
+		<input type="time" name="session-time-to"  placeholder="session-time-to" value="{{finish}}">
+	</div>
+
+	<h2>Speakers</h2>
+	<select multiple class="session-speakers" name="session-speakers">
+
+
+		{{#each userData }}
+		<option value="{{_id}}"> {{fullName}}</option>
+		{{/each}}
+
+	</select>
+
+</div>

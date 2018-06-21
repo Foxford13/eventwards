@@ -1,0 +1,25 @@
+<h1 class="form-admin-title">Admin / Articles / New Article</h1>
+
+
+<input id="new-article-id" type="hidden" name="" value="{{articleData._id}}">
+
+<form class="new-article form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="title">Title</label>
+		<input class="title" type="text" name="title"  placeholder="title" value="{{articleData.title}}">
+	</div>
+
+	<div class="info-container">
+		<label for="url">url</label>
+		<input type="text" name="url"  placeholder="url" value="{{articleData.url}}">
+	</div>
+
+	<div class="info-container">
+		<label for="imageUrl">ImageUrl</label>
+		<input type="text" name="imageUrl"  placeholder="imageUrl" value="{{articleData.imageUrl}}">
+	</div>
+
+	<button class="admin-post-btn" type="submit" >Post new article</button>
+
+</form>

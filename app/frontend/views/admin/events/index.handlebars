@@ -1,0 +1,26 @@
+<h1>Admin / Events</h1>
+
+<a href="/admin-events/new">
+	<div class="new-event-link">
+		New event
+	</div>
+</a>
+
+<div class="container-admin">
+	{{> card-slider content-title="Events"}}
+	<div class="arrow-container admin-arrow-container">
+
+		<div class="event-list card-list event-list-admin list-admin">
+			{{#each eventsIndex}}
+			{{> event-card-admin title=name location=location date=eventDate eventImage=imageFileName _id=_id}}
+			{{/each}}
+		</div>
+
+	</div>
+</div>
+
+<div class="twitter-btn-container">
+
+	<div id="fb-root"></div>
+
+</div>

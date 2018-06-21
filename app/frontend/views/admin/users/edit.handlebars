@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<h1 class="form-admin-title">Admin / Users / Edit User</h1>
+
+
+<input id="edit-user-id" type="hidden" name="" value="{{userData._id}}">
+
+<form class="edit-user form-admin"  method="post">
+
+	<div class="info-container">
+		<label for="fullName">Full Name</label>
+		<input type="text" name="fullName"  placeholder="fullName" value="{{userData.fullName}}">
+	</div>
+
+	<div class="info-container">
+		<label for="email">Email</label>
+		<input type="text" name="email"  placeholder="email" value="{{userData.email}}">
+	</div>
+
+	<div class="info-container">
+		<label for="profession">Profession</label>
+		<input type="text" name="profession"  placeholder="profession" value="{{userData.profession}}">
+	</div>
+
+	<div class="info-container">
+		<label for="imageUrl">Speaker Photo Url</label>
+		<input type="text" name="imageUrl"  placeholder="imageUrl" value="{{userData.imageUrl}}">
+	</div>
+
+	<div class="info-container">
+		<label for="backgroundImageUrl">Speaker Background Url</label>
+		<input type="text" name="backgroundImageUrl"  placeholder="backgroundImageUrl" value="{{userData.backgroundImageUrl}}">
+	</div>
+
+	<div class="info-container">
+		<label for="organisation">Organisation</label>
+		<input type="text" name="organisation"  placeholder="organisation" value="{{userData.organisation}}">
+	</div>
+
+	<div class="info-container">
+		<label for="location">Location</label>
+		<input type="text" name="location"  placeholder="location" value="{{userData.location}}">
+	</div>
+
+
+
+	<div class="info-container">
+		<label for="bio">Bio</label>
+		<textarea type="text" name="bio"  placeholder="bio">{{userData.bio}}</textarea>
+	</div>
+
+	<div class="info-container">
+		<label>article</label>
+		<select multiple class="articles" name="articles">
+
+			{{#each articleData }}
+			<option value="{{_id}}" {{selected _id ../userData._articles}}> {{title}}</option>
+			{{/each}}
+
+		</select>
+	</div>
+	
+	<div class="info-container">
+		<label>Tag the user</label>
+		<select multiple class="tags" name="tags">
+			{{#each tagData }}
+			<option value="{{_id}}" {{selected _id ../userData._tags}}> {{name}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	{{!-- <label>Tags</label>
+	{{tags}}
+	<select multiple class="tags" name="tags">
+
+	{{#each tagData }}
+	<option value="{{_id}}" {{selected _id ../userData._tags}}> {{name}}</option>
+	{{/each}}
+
+</select> --}}
+
+<div class="info-container">
+	<label>Videos</label>
+
+	<select multiple class="videos" name="videos">
+		{{#each videoData }}
+		<option value="{{_id}}" {{selected _id ../userData._videos}}> {{title}}</option>
+		{{/each}}
+	</select>
+</div>
+
+
+<div class="info-container">
+	<label>Organising events</label>
+
+	<select multiple class="organising-events" name="events">
+
+		{{#each eventData }}
+		<option value="{{_id}}" {{selected _id ../userData.events._organising}}> {{name}}</option>
+		{{/each}}
+
+	</select>
+</div>
+
+
+<div class="info-container">
+
+	<label>Speaking at events</label>
+
+	<select multiple class="speaking-events" name="events">
+
+		{{#each eventData }}
+		<option value="{{_id}}" {{selected _id ../userData.events._speaking}}> {{name}}</option>
+		{{/each}}
+
+	</select>
+
+</div>
+
+
+
+<button class="admin-post-btn" type="submit" >Post edit user</button>
+
+</form>
